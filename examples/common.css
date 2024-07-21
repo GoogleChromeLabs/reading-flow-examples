@@ -1,0 +1,95 @@
+/*
+Copyright 2024 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;0,700;0,800;0,900;1,400;1,500;1,700;1,800;1,900&family=Alegreya:ital,wght@0,400..900;1,400..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --primary: #444;
+    --text: #fff;
+}
+
+body {
+    font: 1.2em Nunito, serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: Alegreya, serif;
+}
+
+a:link, a:visited {
+    color: #003566;
+}
+
+header {
+    margin: 0 0 3em 0;
+    background-color: #e9ecef;
+    position: sticky;
+    top: 0;
+    display: flex;
+    font-family: "Alegreya SC", serif;
+}
+
+header span {
+    padding: .5em 1em;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header ul a {
+    padding: .5em 1em;
+    text-decoration: none;
+    display: inline-block;
+}
+
+main,
+footer {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+footer {
+    margin-top: 3em;
+    padding: 1em 0 2em 0;
+    font-size: 80%;
+    border-top: 1px solid #e9ecef;
+}
+
+.wrapper {
+    background-color: #fff;
+    gap: 2px;
+}
+
+.wrapper a:link,
+.wrapper a:visited {
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    padding: .5em;
+}
+
+.wrapper a:hover,
+.wrapper a:active,
+.wrapper a:focus {
+    background-color: #ffd166;
+    color: #000;
+}

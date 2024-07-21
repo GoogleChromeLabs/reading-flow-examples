@@ -1,0 +1,63 @@
+<!--
+Copyright 2024 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>grid-rows with placement: reading-flow examples</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            grid-template-areas: "d b b"
+                                 "c c a";  
+            reading-flow: grid-rows;
+        }
+
+        .a { grid-area: a; }
+        .b { grid-area: b; }
+        .c { grid-area: c; }
+        .d { grid-area: d; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span>reading-flow examples</span>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+    <h1>reading-flow: grid-rows, with placed items</h1>
+    <div class="wrapper">
+        <a class="a" href="#">Item 1</a>
+        <a class="b" href="#">Item 2</a>
+        <a class="c" href="#">Item 3</a>
+        <a class="d" href="#">Item 4</a>
+    </div>
+
+    <div class="info">
+        <p>In this example, the reading flow should follow the visual order by rows.
+        In English, this is left to right top to bottom, therefore—"Item 4", "Item 2", "Item 3", "Item 1".</p>
+    </div>
+    </main>
+  </body>
+</html>
