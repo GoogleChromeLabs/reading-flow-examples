@@ -9,3 +9,5 @@ To try these out, install Chrome Dev or Canary (version 128 or higher) and launc
 ```
 
 You can then test the examples in the `examples` folder.
+
+If you just want to view the example in a browser, you can find them published at https://chrome.dev/reading-flow-examples/.
