@@ -6,4 +6,4 @@ To try these out, install Chrome Canary, and enable the **Experimental Web Platf
 
 You can then test the examples in the `examples` folder.
 
-If you just want to view the example in a browser, you can find them published at https://chrome.dev/reading-flow-examples/.
+If you just want to view the examples in a browser, you can find them published at https://chrome.dev/reading-flow-examples/.

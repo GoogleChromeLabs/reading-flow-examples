@@ -1,0 +1,92 @@
+<!--
+Copyright 2024 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>grid-rows with placement and subgrid: reading-flow examples</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(4, 150px); 
+            reading-flow: grid-rows;
+        }
+
+        .subgrid {
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
+            display: grid;
+            grid-template-rows: subgrid;
+            grid-template-columns: subgrid;
+            /*reading-flow: grid-rows;*/
+        }
+
+        .a {
+            grid-row: 4;
+            grid-column: 1 / 3;
+        }
+
+        .b {
+            grid-row: 4;
+            grid-column: 3 / -1;
+        }
+
+        .c {
+            grid-row: 1;
+            grid-column: 1 / -1;
+        }
+
+        .sub-a {
+            grid-row: 2;
+            grid-column: 1 / -1;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <span>reading-flow examples</span>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+    <h1>reading-flow: grid-rows, with subgrid and placed items</h1>
+    <div class="wrapper">
+        <a class="a" href="#">Item 1</a>
+        <a class="b" href="#">Item 2</a>
+        <a class="c" href="#">Item 3</a>
+        <div class="subgrid">
+            <a class="sub-a" href="#">Item 4</a>
+            <a class="sub-b" href="#">Item 5</a>
+            <a class="sub-c" href="#">Item 6</a>
+        </div>
+    </div>
+
+    <div class="info">
+        <p>This example has a grid layout with positioned items. It contains a subgrid—visually the center section with the pink border. The parent grid has <code>reading-flow: grid-rows</code>.</p>
+        <p>The tab order is therefore Item 3, then the subgrid item and its children (Item 4, Item 5, Item 6), Item 1, Item 2.</p>
+        <p>The <code>reading-flow</code> property doesn't inherit, therefore the subgrid children are tabbed to in DOM order. To cause the children of the subgrid to also use reading flow, add <code>reading-flow: grid-rows</code> to that element as well.</p>
+    </div>
+    </main>
+  </body>
+</html>
