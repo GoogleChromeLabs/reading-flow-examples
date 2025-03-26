@@ -1,0 +1,63 @@
+<!--
+Copyright 2024 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>block container with reading-flow: source-order and reading-order on a child</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .wrapper {
+            background-color: #fff;
+            reading-flow: source-order;
+        }
+
+        .wrapper a {
+            display: block;
+        }
+
+        .wrapper a:nth-child(3){
+          reading-order: -1;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span>reading-flow examples</span>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+    <h1>block container with reading-flow: source-order and reading-order on a child</h1>
+    <div class="wrapper">
+        <a href="#">One</a>
+        <a href="#">Two</a>
+        <a href="#">Three</a>
+        <a href="#">Four</a>
+        <a href="#">Five</a>
+    </div>
+
+    <div class="info">
+        <p>In this example, a block container has <code>reading-flow: source-order</code>. Then the third item has <code>reading-order:-1</code>.
+        This causes the third item to be visited first in reading order, then the rest of the items in source order.</p>
+    </div>
+    </main>
+  </body>
+</html>
